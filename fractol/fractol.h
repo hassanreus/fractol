@@ -23,14 +23,23 @@ typedef struct	s_fractol
 	void *ptr;
 	void *win;
 	void *image;
-	char *data;
+	int *data;
 	int img_win;
-	unsigned int color_value;
-	int det_image;
 	int is_fract;
 	int bits_per_pixel;
 	int size_line;
 	int endian;
+	double z_r;
+	double z_i;
+	double c_r;
+	double c_i;
+	int it;
+	int it_max;
+	int color;
+	double x;
+	double y;
+	double perv;
+	double zoom;
 }				t_fractol;
 
 #endif
