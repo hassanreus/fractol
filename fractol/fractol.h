@@ -17,7 +17,7 @@
 # include "mlx.h"
 # include "./get_next_line/get_next_line.h"
 # include <math.h>
-
+# define __ABS(x) (x > 0 ? x : -x)
 typedef struct	s_fractol
 {
 	void *ptr;
@@ -40,6 +40,22 @@ typedef struct	s_fractol
 	double y;
 	double perv;
 	double zoom;
+	int mouse;
+	int all;
+	void	(*type_fract)(struct s_fractol *, int, int);
 }				t_fractol;
+
+void		control(t_fractol *fractol);
+void		control_v1(t_fractol *fractol);
+void        free_by(t_fractol *fractol);
+void		draw(t_fractol *fractol);
+void        init(t_fractol *fractol, char *av);
+void		put_pixel(t_fractol *fractol, int x, int y, int color);
+void		madelbrot_cl(t_fractol *fractol, int i, int j);
+void		julia_cl(t_fractol *fractol, int i, int j);
+int			julia_new(int x, int y ,t_fractol *fractol);
+int			get_color(int all);
+void	br(t_fractol *fractol, int i, int j);
+void	new_o(t_fractol *fractol, int i, int j);
 
 #endif

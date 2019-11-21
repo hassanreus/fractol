@@ -13,7 +13,7 @@
 NAME = fractol
 LIBFT_PATH = ./get_next_line/libft/
 LIB = -lmlx -framework OpenGL -framework  AppKit
-SRC = main.c\
+SRC = main.c init.c control.c calcul.c draw.c
 		
 OBJ = $(SRC:.c=.o)
 
